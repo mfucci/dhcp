@@ -331,6 +331,16 @@ declare namespace DHCP {
          * None
          * Size: 0
          */
+        TftpServer = 66,
+        /**
+         * TFTP server name
+         * Size: N
+         */
+        BootFile = 67,
+        /**
+         * Bootfile name
+         * Size: N
+         */
         End = 255,
         //  64-127  Unassigned
         //  128-154 Reserved
@@ -439,6 +449,12 @@ declare namespace DHCP {
     }
     export class RebindingTimeOption extends Uint32Option {
         constructor(data?: number);
+    }
+    export class TftpServerOption extends Utf8Option {
+        constructor(data?: string);
+    }
+    export class BootFileOption extends Utf8Option {
+        constructor(data?: string);
     }
     export interface ClientIdentifier {
         htype: number;
