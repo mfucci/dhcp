@@ -3,26 +3,29 @@
   "version": "1.0.4",
   "description": "NodeJS implementation of DHCP socket connection",
   "main": "out/index.js",
-  "types": "index.d.ts",
+  "module": "out/index.mjs",
+  "types": "out/index.d.ts",
   "directories": {
     "example": "examples"
   },
   "dependencies": {
-    "@types/node": "^10.5.2"
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.4",
-    "coveralls": "^3.0.2",
-    "mocha": "^5.2.0",
-    "nyc": "^12.0.2",
-    "ts-node": "^7.0.0",
-    "typescript": "^2.9.2"
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.5.2",
+    "coveralls": "^3.0.6",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "rollup": "^1.21.4",
+    "rollup-plugin-dts": "^0.15.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
   },
   "scripts": {
+    "prepare": "npm run build",
     "test": "mocha",
-    "build": "tsc",
-    "build:map": "tsc --sourceMap",
-    "build:source": "tsc --declaration --declarationDir types",
+    "build": "rollup -c",
     "prepatch": "npm run build",
     "patch": "npm version patch",
     "pub": "npm run patch && npm publish && git push",
