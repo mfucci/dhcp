@@ -5,12 +5,7 @@
         "noImplicitAny": true,
         "strictNullChecks": true,
         "sourceMap": false,
-        "outDir": "out"
-    },
-    "exclude": [
-        "index.d.ts",
-        "types",
-        "node_modules",
-        "test"
-    ],
+        "outDir": "out",
+        "importHelpers": true
+    }
 }
