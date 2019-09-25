@@ -107,10 +107,11 @@ export class Server extends Socket {
         p.options.push(new SubnetMaskOption(this.netmask));                 // #1
         if (this.gateways.length) {
             p.options.push(new GatewaysOption(this.gateways));
-        }              // #3
+        }                                                                   // #3
         if (this.domainServer.length) {
             p.options.push(new DomainServerOption(this.domainServer));
-        }      // #6
+        }                                                                   // #6
+
         p.options.push(new AddressTimeOption(this.addressTime));            // #51
         p.options.push(new DHCPServerIdOption(this.serverId));              // #54
         return p;

@@ -59,6 +59,12 @@ export abstract class Option<T> {
             case DHCPOptions.ClassId:
                 res = ClassIdOption;
                 break;
+            case DHCPOptions.TftpServer:
+                res = TftpServerOption;
+                break;
+            case DHCPOptions.BootFile:
+                res = BootFileOption;
+                break;
             case DHCPOptions.End:
                 res = EndOption;
                 break;
@@ -279,6 +285,16 @@ export class RenewalTimeOption extends Uint32Option {
 export class RebindingTimeOption extends Uint32Option {
     constructor(data?: number) {
         super(DHCPOptions.RebindingTime, data);
+    }
+}
+export class TftpServerOption extends Utf8Option {
+    constructor(data?: string) {
+        super(DHCPOptions.TftpServer, data);
+    }
+}
+export class BootFileOption extends Utf8Option {
+    constructor(data?: string) {
+        super(DHCPOptions.BootFile, data);
     }
 }
 

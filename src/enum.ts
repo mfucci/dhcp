@@ -70,7 +70,9 @@
  *   61      Client Id         N          Client Identifier
  *   62      Netware/IP Domain N          Netware/IP Domain Name
  *   63      Netware/IP Option N          Netware/IP sub Options
- *
+ *   66      TFTP Server       N          TFTP Server IP/Domain Name
+ *   67      Bootfile name     N          Boot file for PXE booting.
+ *   
  *   64-127  Unassigned
  *   128-154 Reserved
  *
@@ -401,6 +403,16 @@ export enum DHCPOptions {
     /**
      * None
      * Size: 0
+     */
+    TftpServer = 66,
+    /**
+     * TFTP server name
+     * Size: N
+     */
+    BootFile = 67,
+    /**
+     * Bootfile name
+     * Size: N
      */
     End = 255,
     //  64-127  Unassigned
