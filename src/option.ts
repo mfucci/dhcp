@@ -94,7 +94,7 @@ export class EndOption extends Option<null> {
     }
 
     public toBuffer(): Buffer {
-        return new Buffer([255]);
+        return Buffer.from([255]);
     }
     public fromBuffer(data: Buffer) {
         this.value = null;
@@ -104,7 +104,7 @@ export class EndOption extends Option<null> {
 export abstract class Uint8Option extends Option<number> {
 
     public toBuffer() {
-        return new Buffer([this.type, 1, this.value]);
+        return Buffer.from([this.type, 1, this.value]);
     }
 
     public fromBuffer(data: Buffer) {
@@ -117,7 +117,7 @@ export abstract class Uint8Option extends Option<number> {
 export abstract class Uint16Option extends Option<number> {
 
     public toBuffer() {
-        const buf = new Buffer([this.type, 2, 0, 0]);
+        const buf = Buffer.from([this.type, 2, 0, 0]);
         buf.writeUInt16BE(this.value, 2);
         return buf;
     }
@@ -132,7 +132,7 @@ export abstract class Uint16Option extends Option<number> {
 export abstract class Uint32Option extends Option<number> {
 
     public toBuffer() {
-        const buf = new Buffer([this.type, 4, 0, 0, 0, 0]);
+        const buf = Buffer.from([this.type, 4, 0, 0, 0, 0]);
         buf.writeUInt32BE(this.value, 2);
         return buf;
     }
@@ -161,7 +161,7 @@ export abstract class IpAddressOption extends Option<string> {
 
     public toBuffer() {
         return Buffer.concat([
-            new Buffer([this.type, 4]),
+            Buffer.from([this.type, 4]),
             IpConverter.encode(this.value),
         ]);
     }
@@ -177,8 +177,8 @@ export abstract class NumberListOption extends Option<number[]> {
 
     public toBuffer() {
         return Buffer.concat([
-            new Buffer([this.type, this.value.length]),
-            new Buffer(this.value),
+            Buffer.from([this.type, this.value.length]),
+            Buffer.from(this.value),
         ]);
     }
 
@@ -198,7 +198,7 @@ export abstract class BufferOption extends Option<Buffer> {
 
     public toBuffer() {
         return Buffer.concat([
-            new Buffer([this.type, this.value.length]),
+            Buffer.from([this.type, this.value.length]),
             this.value,
         ]);
     }
@@ -212,9 +212,9 @@ export abstract class BufferOption extends Option<Buffer> {
 export abstract class Utf8Option extends Option<string> {
 
     public toBuffer() {
-        const text = new Buffer(this.value, "utf8");
+        const text = Buffer.from(this.value, "utf8");
         return Buffer.concat([
-            new Buffer([this.type, text.byteLength]),
+            Buffer.from([this.type, text.byteLength]),
             text,
         ]);
     }
@@ -310,7 +310,7 @@ export class ClientIdentifierOption extends Option<ClientIdentifier> {
     public toBuffer() {
         const chaddr = MacConverter.encode(this.value.chaddr);
         return Buffer.concat([
-            new Buffer([this.type, chaddr.byteLength + 1, this.value.htype]),
+            Buffer.from([this.type, chaddr.byteLength + 1, this.value.htype]),
             chaddr,
         ]);
     }
@@ -327,7 +327,7 @@ export class ClientIdentifierOption extends Option<ClientIdentifier> {
 export abstract class IpAddressListOption extends Option<string[]> {
     public toBuffer() {
         let buffers = this.value.map((addr) => IpConverter.encode(addr));
-        buffers = [new Buffer([this.type, this.value.length * 4])].concat(buffers);
+        buffers = [Buffer.from([this.type, this.value.length * 4])].concat(buffers);
         return Buffer.concat(buffers);
     }
 

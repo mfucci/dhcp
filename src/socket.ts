@@ -109,7 +109,7 @@ export class Socket extends EventEmitter {
     }
 
     protected onMessage(msg: string, reinfo: AddressInfo) {
-        const buf = new Buffer(msg, "binary");
+        const buf = Buffer.from(msg, "binary");
 
         const packet = Packet.fromBuffer(buf);
         packet.reinfo = reinfo;

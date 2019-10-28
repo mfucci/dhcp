@@ -50,16 +50,16 @@ describe("Packet", () => {
 
     vectors.forEach((vector) => {
         it(vector.name, () => {
-            const packet = Packet.fromBuffer(new Buffer(vector.hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(vector.hex, "hex"));
             assert.equal(packet.type, vector.type);
         });
         it(vector.name + " find", () => {
-            const packet = Packet.fromBuffer(new Buffer(vector.hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(vector.hex, "hex"));
             const hostName = packet.find(12);
         });
 
         it(vector.name + " from buffer to string", () => {
-            const packet = Packet.fromBuffer(new Buffer(vector.hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(vector.hex, "hex"));
             const pktString = packet.toString();
             const toBuffer = packet.toBuffer();
             assert.equal(toBuffer.toString("hex"), vector.hex);
@@ -74,13 +74,13 @@ describe("Packet", () => {
         });
 
         it("toBuffer options without end", () => {
-            const packet = Packet.fromBuffer(new Buffer(vectors[0].hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(vectors[0].hex, "hex"));
             packet.options.pop();
             const toString = packet.toBuffer();
         });
 
         it("toString branch UNKNOWN", () => {
-            const packet = Packet.fromBuffer(new Buffer(vectors[0].hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(vectors[0].hex, "hex"));
             packet.options.shift();
             const toString = packet.toString();
             packet.toBuffer();
