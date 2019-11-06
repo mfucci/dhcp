@@ -110,7 +110,7 @@ export class Packet {
      * @memberOf Packet
      */
     public toBuffer(): Buffer {
-        const buffer = new Buffer(512);
+        const buffer = Buffer.alloc(512);
         buffer.fill(0);
 
         buffer[0] = this.op;
@@ -140,7 +140,7 @@ export class Packet {
             this.options.push(new Options.EndOption());
         }
 
-        buffer.write(new Buffer([99, 130, 83, 99]).toString("binary"), 236, 4, "binary"); // magic cookie RFC2132
+        buffer.write(Buffer.from([99, 130, 83, 99]).toString("binary"), 236, 4, "binary"); // magic cookie RFC2132
 
         const options = this.options.map((option) => option.toBuffer());
         const raw = Buffer.concat(options).toString("binary");

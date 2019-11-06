@@ -6,7 +6,7 @@ export const IpConverter = {
             data = DEFAULT_IP;
         }
         const octets = data.split(IP_SPLITTER);
-        const buffer = new Buffer(octets.length);
+        const buffer = Buffer.alloc(octets.length);
         octets.forEach((octet, index) => buffer[index] = Number(octet));
         return buffer;
     },
@@ -31,14 +31,14 @@ export const MacConverter = {
             data = DEFAULT_IP;
         }
         const octets = data.replace(new RegExp(MAC_SPLITTER, "g"), "");
-        const buffer = new Buffer(octets, "hex");
+        const buffer = Buffer.from(octets, "hex");
 
         return buffer;
     },
     decode(data: Buffer, len?: number): string {
         let res: string[] = [];
         for (let i = 0; i < data.length; i++) {
-            res.push(new Buffer([data[i]]).toString("hex").toUpperCase());
+            res.push(Buffer.from([data[i]]).toString("hex").toUpperCase());
         }
         if (len) {
             res = res.slice(0, len);

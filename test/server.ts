@@ -62,7 +62,7 @@ describe("Server", () => {
             server1.bind();
             server2.bind();
 
-            const packet = Packet.fromBuffer(new Buffer(hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(hex, "hex"));
             server1.send(packet);
         });
     });
@@ -98,7 +98,7 @@ describe("Server", () => {
 
         it("createAck empty gateways & domainServer & type = request", () => {
             const server = new Server("192.168.1.1");
-            const packet = Packet.fromBuffer(new Buffer(hex, "hex"));
+            const packet = Packet.fromBuffer(Buffer.from(hex, "hex"));
             server.createAck(packet);
 
             assert.equal(server.serverId, "192.168.1.1");
