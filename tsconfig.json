@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
+        "target": "es6",
         "module": "commonjs",
-        "target": "esnext",
+        "declaration": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
         "sourceMap": false,
         "outDir": "out",
-        "importHelpers": true
+        "moduleResolution": "node"
     }
 }
