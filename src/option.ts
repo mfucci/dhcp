@@ -352,8 +352,8 @@ export class DomainServerOption extends IpAddressListOption {
         super(DHCPOptions.DomainServer, data);
     }
 }
-export class ClassIdOption extends BufferOption {
-    constructor(data?: Buffer) {
+export class ClassIdOption extends Utf8Option {
+    constructor(data?: string) {
         super(DHCPOptions.ClassId, data);
     }
 }
