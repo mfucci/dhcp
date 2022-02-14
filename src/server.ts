@@ -1,6 +1,7 @@
-import { Packet, Socket, SocketMessageEvent, SocketMessageEventHandle, SocketSendEventHandle } from "./";
-import { DHCPMessageType } from "./";
-import { AddressTimeOption, BOOTMessageType, DHCPMessageTypeOption, DHCPServerIdOption, DomainServerOption, GatewaysOption, SubnetMaskOption } from "./";
+import { BOOTMessageType, DHCPMessageType } from "./enum";
+import { AddressTimeOption, DHCPMessageTypeOption, DHCPServerIdOption, DomainServerOption, GatewaysOption, SubnetMaskOption } from "./option";
+import { Packet } from "./packet";
+import { Socket, SocketMessageEvent, SocketMessageEventHandle, SocketSendEventHandle } from "./socket";
 
 export interface ServerOptions {
     serverId: string;
@@ -167,5 +168,4 @@ export class Server extends Socket {
         p.options.push(new DHCPServerIdOption(this.serverId));              // #54
         return p;
     }
-
 }
