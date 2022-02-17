@@ -1,11 +1,11 @@
 # DHCP
 
-[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/mfucci/dhcp/master/LICENSE) 
-[![CircleCI](https://circleci.com/gh/TrustedPlus/dhcp.svg?style=svg)](https://circleci.com/gh/mfucci/dhcp)
-[![Coverage Status](https://coveralls.io/repos/github/TrustedPlus/dhcp-mon/badge.svg?branch=master)](https://coveralls.io/github/mfucci/dhcp?branch=master)
-[![npm version](https://badge.fury.io/js/dhcp-mon.svg)](https://badge.fury.io/js/@network-utils/dhcp)
+[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/mfucci/dhcp/master/LICENSE.md) 
+[![CircleCI](https://circleci.com/gh/mfucci/dhcp.svg?style=svg)](https://circleci.com/gh/mfucci/dhcp)
+[![Coverage Status](https://coveralls.io/repos/github/mfucci/dhcp/badge.svg?branch=master)](https://coveralls.io/github/mfucci/dhcp?branch=master)
+[![npm version](https://badge.fury.io/js/@network-utils%2Fdhcp.svg)](https://badge.fury.io/js/@network-utils%2Fdhcp)
 
-[![NPM](https://nodei.co/npm/dhcp-mon.png)](https://nodei.co/npm/@network-utils/dhcp/)
+[![NPM](https://nodei.co/npm/@network-utils/dhcp.png?compact=true)](https://nodei.co/npm/@network-utils/dhcp?compact=true)
 
 NodeJS implementation of DHCP socket connection
 
