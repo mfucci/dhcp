@@ -19,7 +19,8 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "test": "mocha --require ts-node/register ./out/test/*.js",
+    "build_test": "tsc --project tsconfig.test.json",
+    "test": "npm run build_test && mocha --require ts-node/register ./out_test/test/*.js",
     "build": "tsc",
     "prepatch": "npm run build",
     "patch": "npm version patch",

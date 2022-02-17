@@ -10,4 +10,5 @@ tslint.json
 /test
 /out/**/_*
 /out/**/*.map
+/out_test
 examples/
