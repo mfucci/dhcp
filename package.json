@@ -1,5 +1,5 @@
 {
-  "name": "dhcp-mon",
+  "name": "@network-utils/dhcp",
   "version": "1.0.7",
   "description": "NodeJS implementation of DHCP socket connection",
   "main": "out/index.js",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TrustedPlus/dhcp-mon.git"
+    "url": "git+https://github.com/mfucci/dhcp.git"
   },
   "keywords": [
     "dhcp",
