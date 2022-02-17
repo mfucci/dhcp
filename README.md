@@ -1,4 +1,4 @@
-# DHCP-MON
+# DHCP
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/mfucci/dhcp/master/LICENSE) 
 [![CircleCI](https://circleci.com/gh/TrustedPlus/dhcp.svg?style=svg)](https://circleci.com/gh/mfucci/dhcp)
@@ -12,7 +12,7 @@ NodeJS implementation of DHCP socket connection
 ## Install
 
 ```
-npm install dhcp-mon
+npm install @network-utils/dhcp
 ```
 
 ## Declarations
@@ -27,7 +27,7 @@ Module has got TypeScript declarations. It can be helpful to understand the modu
 
 ```javascript
 "use strict";
-let { BOOTMessageType, Server } = require("dhcp-mon");
+let { BOOTMessageType, Server } = require("@network-utils/dhcp");
 
 let s = new Server("192.168.1.1");
 
@@ -46,7 +46,7 @@ s.bind();
 
 ```javascript
 "use strict";
-let { BOOTMessageType, Server } = require("dhcp-mon");
+let { BOOTMessageType, Server } = require("@network-utils/dhcp");
 
 let s = new Server({
     serverId: "192.168.1.1",
