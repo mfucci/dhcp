@@ -3,7 +3,6 @@
   "version": "1.0.10",
   "description": "NodeJS implementation of DHCP socket connection",
   "main": "out/index.js",
-  "module": "out/index.mjs",
   "types": "out/index.d.ts",
   "directories": {
     "example": "examples"
