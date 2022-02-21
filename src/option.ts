@@ -65,6 +65,9 @@ export abstract class Option<T> {
             case DHCPOptions.BootFile:
                 res = BootFileOption;
                 break;
+            case DHCPOptions.BroadcastAddress:
+                res = BroadcastAddressOption;
+                break;
             case DHCPOptions.End:
                 res = EndOption;
                 break;
@@ -355,6 +358,11 @@ export class DomainServerOption extends IpAddressListOption {
 export class ClassIdOption extends Utf8Option {
     constructor(data?: string) {
         super(DHCPOptions.ClassId, data);
+    }
+}
+export class BroadcastAddressOption extends IpAddressOption {
+    constructor(data?: string) {
+        super(DHCPOptions.BroadcastAddress, data);
     }
 }
 export class UnknownOption extends BufferOption {
